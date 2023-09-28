@@ -44,6 +44,6 @@ test path="":
     #!/bin/bash
     set -euxo pipefail
 
-    poetry run coverage run -m pytest {{path}}
+    poetry run coverage run -m pytest {{path}} -vv
     poetry run coverage report -m
     poetry run coverage html

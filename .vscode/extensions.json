@@ -1,0 +1,18 @@
+{
+  "recommendations": [
+    "editorconfig.editorconfig",
+    "ms-python.black-formatter",
+    "ms-python.flake8",
+    "ms-python.isort",
+    "ms-python.python",
+    "ms-python.vscode-pylance",
+    "redhat.vscode-yaml",
+    "skellock.just",
+    "stkb.rewrap",
+    "esbenp.prettier-vscode",
+    "ms-azuretools.vscode-docker",
+    "vscode.json-language-features",
+    "GitHub.copilot",
+    "tamasfe.even-better-toml"
+  ]
+}

@@ -33,7 +33,7 @@ update_boilerplate branch="main":
         exit 1;
     fi
 
-    git fetch --all
+    git fetch boilerplate {{branch}}
     git pull --rebase=false --no-ff boilerplate {{branch}} || true
 
     echo -e "\e[32mBoilerplate changes staged for commit. Resolve any conflicts and run 'git commit'.\e[0m"

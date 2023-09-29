@@ -13,6 +13,7 @@
     "ms-azuretools.vscode-docker",
     "vscode.json-language-features",
     "GitHub.copilot",
-    "tamasfe.even-better-toml"
+    "tamasfe.even-better-toml",
+    "wholroyd.jinja"
   ]
 }

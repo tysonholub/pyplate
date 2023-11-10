@@ -42,4 +42,14 @@ git remote add origin <remote repository>
 ```
 Remove and replace (or rename) the `pysrc/pyplate` module to start your new project. Be sure to also replace `pyplate` references in `pyproject.toml` with your new module / project name.
 
-You can also add this repository to an existing project as the `boilerplate` remote, then run `just update_boilerplate` to pull latest changes from the `boilerplate` remote. Note that this could result in a lot of conflicts to resolve, depending on your project structure.
+You can also add this repository to an existing project as the `boilerplate` remote:
+```bash
+git remote add boilerplate git@github.com:tysonholub/pyplate.git
+```
+
+The following should help apply the boilerplate history into an existing project. Depending on your existing project structure, you may want to move everything into a backup/ folder first, then refactor accordingly after merging the boilerplate remote.
+```bash
+git merge boilerplate/main --no-ff --allow-unrelated-histories
+```
+
+Then moving forward, run `just update_boilerplate` to pull latest changes from the `boilerplate` remote. **NOTE**: you must keep the boilerplate remote history intact to successfully merge updates from the boilerplate remote.

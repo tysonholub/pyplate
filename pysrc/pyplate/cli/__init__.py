@@ -2,7 +2,7 @@ import logging
 
 import typer
 
-import boilerplate
+import pyplate
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -17,4 +17,4 @@ def main(ctx: typer.Context):
 
 @app.command("hello-world")
 def hello_world():
-    boilerplate.hello_world()
+    pyplate.hello_world()

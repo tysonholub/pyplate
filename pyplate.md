@@ -1,4 +1,4 @@
-# Released under MIT License
+# Released under MIT License (git@github.com:tysonholub/pyplate.git)
 
 Copyright (c) 2023 Tyson Holub.
 

@@ -2,14 +2,14 @@ from unittest.mock import Mock, call, patch
 
 from typer import Context
 
-from boilerplate.cli import app
+from pyplate.cli import app
 
 
 def test_app_commands():
     assert "hello-world" in [x.name for x in app.registered_commands]
 
 
-@patch("boilerplate.cli.logger")
+@patch("pyplate.cli.logger")
 def test_app_callbacks(mock_log):
     ctx = Mock(spec=Context, invoked_subcommand="test-callback")
     app.registered_callback.callback(ctx)

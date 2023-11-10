@@ -1,4 +1,4 @@
-# Python Boilerplate
+# pyplate
 
 ## Overview
 A boilerplate for Python 3 projects
@@ -40,6 +40,6 @@ Then add your new remote `origin`
 ```bash
 git remote add origin <remote repository>
 ```
-Remove and replace (or rename) the `pysrc/boilerplate` module to start your new project. Be sure to also replace `boilerplate` references in `pyproject.toml` with your new module / project name.
+Remove and replace (or rename) the `pysrc/pyplate` module to start your new project. Be sure to also replace `pyplate` references in `pyproject.toml` with your new module / project name.
 
 You can also add this repository to an existing project as the `boilerplate` remote, then run `just update_boilerplate` to pull latest changes from the `boilerplate` remote. Note that this could result in a lot of conflicts to resolve, depending on your project structure.

@@ -20,6 +20,9 @@ A boilerplate for Python 3 projects
 - [pre-commit](https://github.com/pre-commit/pre-commit) (install globally with `pipx install pre-commit`)
 - [just](https://github.com/casey/just), a Justfile command runner
 
+### Windows
+Justfile support for Windows requires [cygwin](https://www.cygwin.com/). Once installed your `PATH` will need to be updated to resolve `cygpath.exe` (probably `C:\cygwin64\bin`). Justfile will forward any targets with shebangs starting with `/` to cygwin for execution.
+
 ## Updating python version:
 - Update python version in `Dev Prerequisites` above
 - Update \[tool.poetry.dependencies\] section of `pyproject.toml`

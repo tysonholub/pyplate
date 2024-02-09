@@ -53,7 +53,9 @@ repos:
     hooks:
       - id: isort
   - repo: https://github.com/psf/black
-    rev: 24.1.1
+    # The `refs/tags/<tag>:refs/tags/<tag>` is needed for black's required-version to work:
+    # https://github.com/psf/black/issues/2493#issuecomment-1081987650
+    rev: 'refs/tags/24.1.1:refs/tags/24.1.1'
     hooks:
       - id: black
   - repo: https://github.com/PyCQA/flake8

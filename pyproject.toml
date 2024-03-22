@@ -1,5 +1,7 @@
 [tool.black]
-required-version = "24.1.1"
+# bump the dev dependency version when updating this
+# also bump black version in the pre-commit config
+required-version = "24.3.0"
 line-length = 119
 # fast disables black AST (covered by bandit pre-commit plugin)
 fast = true
@@ -21,19 +23,10 @@ enable-unstable-feature = [
 minversion = "7.0"
 addopts = "--strict-markers --strict-config"
 asyncio_mode = "auto"
-norecursedirs = [
-    ".git",
-    ".tox",
-    ".env",
-    ".venv",
-]
-testpaths = [
-    "pytests",
-]
+norecursedirs = [".git", ".tox", ".env", ".venv"]
+testpaths = ["pytests"]
 timeout = 60
-pythonpath = [
-    "pysrc",
-]
+pythonpath = ["pysrc"]
 
 [tool.poetry]
 name = "pyplate"
@@ -42,7 +35,7 @@ description = ""
 authors = ["Tyson Holub <tyson@tysonholub.com>"]
 license = "MIT"
 readme = "README.md"
-packages = [{include = "pyplate", from="pysrc"}]
+packages = [{ include = "pyplate", from = "pysrc" }]
 include = ["pyplate.md"]
 
 [tool.poetry.dependencies]
@@ -50,6 +43,7 @@ python = "^3.11"
 typer = "^0.9"
 
 [tool.poetry.group.dev.dependencies]
+black = "24.3.0"
 coverage = "^7"
 pytest = "^7"
 pytest-asyncio = "^0.21"
@@ -63,10 +57,7 @@ line_length = 119
 use_parentheses = true
 multi_line_output = 3
 include_trailing_comma = true
-src_paths = [
-    "pysrc",
-    "pytests"
-]
+src_paths = ["pysrc", "pytests"]
 
 [tool.coverage.report]
 # Regexes for lines to exclude from consideration
@@ -91,9 +82,7 @@ exclude_also = [
 max-line-length = 119
 
 [tool.pylint.'MESSAGES CONTROL']
-disable = [
-    "wrong-import-position"
-]
+disable = ["wrong-import-position"]
 
 [build-system]
 requires = ["poetry-core"]

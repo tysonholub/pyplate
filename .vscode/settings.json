@@ -17,9 +17,11 @@
   "[yaml]": {
     "editor.defaultFormatter": "redhat.vscode-yaml"
   },
+  "black-formatter.importStrategy": "fromEnvironment",
   "editor.codeActionsOnSave": {
     "source.organizeImports": "explicit"
   },
+  "editor.formatOnSave": true,
   "editor.rulers": [
     119
   ],

@@ -1,0 +1,50 @@
+name: tests
+
+on:
+  pull_request:
+    types:
+      - opened
+      - edited
+      - synchronize
+      - reopened
+
+permissions:
+  pull-requests: write
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v3
+        with:
+          python-version: "3.11"
+      - name: install
+        run: |
+          python -m pip install --upgrade pip
+          pip install poetry
+          pip install pre-commit
+          poetry install
+      - name: pre-commit
+        run: |
+          pre-commit run --all-files;
+      - name: pytest
+        run: |
+          poetry run coverage run --source=pysrc/ -m pytest pysrc/ pytests/
+          poetry run coverage report -m
+          poetry run coverage html
+          poetry run coverage xml
+      - name: coverage-artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: coverage
+          path: |
+            htmlcov/
+      - name: coverage-report
+        uses: orgoro/coverage@v3.1
+        with:
+          coverageFile: coverage.xml
+          token: ${{ secrets.GITHUB_TOKEN }}

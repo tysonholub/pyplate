@@ -1,7 +1,7 @@
 [tool.black]
 # bump the dev dependency version when updating this
 # also bump black version in the pre-commit config
-required-version = "24.3.0"
+required-version = "24.8.0"
 line-length = 119
 # fast disables black AST (covered by bandit pre-commit plugin)
 fast = true
@@ -9,14 +9,10 @@ fast = true
 preview = true
 # check these with `black --help` when updating required-version
 enable-unstable-feature = [
-    "hex_codes_in_unicode_sequences",
     "string_processing",
     "hug_parens_with_braces_and_square_brackets",
-    "unify_docstring_detection",
-    "no_normalize_fmt_skip_whitespace",
     "wrap_long_dict_values_in_parens",
     "multiline_string_handling",
-    "typed_params_trailing_comma",
 ]
 
 [tool.pytest.ini_options]
@@ -43,7 +39,7 @@ python = "^3.11"
 typer = "^0.9"
 
 [tool.poetry.group.dev.dependencies]
-black = "24.3.0"
+black = "24.8.0"
 coverage = "^7"
 pytest = "^7"
 pytest-asyncio = "^0.21"

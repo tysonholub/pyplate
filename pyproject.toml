@@ -1,7 +1,7 @@
 [tool.black]
 # bump the dev dependency version when updating this
 # also bump black version in the pre-commit config
-required-version = "24.8.0"
+required-version = "24.10.0"
 line-length = 119
 # fast disables black AST (covered by bandit pre-commit plugin)
 fast = true
@@ -35,14 +35,14 @@ packages = [{ include = "pyplate", from = "pysrc" }]
 include = ["pyplate.md"]
 
 [tool.poetry.dependencies]
-python = "^3.11"
-typer = "^0.9"
+python = "^3.12"
+typer = "^0.13"
 
 [tool.poetry.group.dev.dependencies]
-black = "24.8.0"
+black = "24.10.0"
 coverage = "^7"
-pytest = "^7"
-pytest-asyncio = "^0.21"
+pytest = "^8"
+pytest-asyncio = "^0.24"
 pytest-timeout = "^2"
 
 [tool.poetry.scripts]
